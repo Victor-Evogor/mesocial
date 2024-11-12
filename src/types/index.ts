@@ -56,9 +56,18 @@ export type User = {
   bio: string;
 };
 
+export type Message = {
+  id: string;
+  conversationId: string;
+  senderId: string;
+  content: string;
+  createdAt: Date;
+};
+
 export type Conversation = {
   id: string;
   participants: string[];
   lastMessage?: string;
   lastMessageTime?: Date;
+  messages: Message[];
 };

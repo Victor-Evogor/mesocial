@@ -36,6 +36,79 @@ export async function createUserAccount(user: INewUser) {
   }
 }
 
+// ============================================================
+// MESSAGES
+// ============================================================
+
+// ============================== CREATE CONVERSATION
+export async function createConversation(participants: string[]) {
+  try {
+    const conversation = await databases.createDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.conversationsCollectionId,
+      ID.unique(),
+      {
+        participants,
+        messages: [],
+        lastMessageTime: new Date()
+      }
+    );
+
+    if (!conversation) throw Error;
+
+    return conversation;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// ============================== SEND MESSAGE
+export async function sendMessage(conversationId: string, senderId: string, content: string) {
+  try {
+    const message = {
+      id: ID.unique(),
+      conversationId,
+      senderId,
+      content,
+      createdAt: new Date()
+    };
+
+    const updatedConversation = await databases.updateDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.conversationsCollectionId,
+      conversationId,
+      {
+        $push: { messages: message },
+        lastMessage: content,
+        lastMessageTime: message.createdAt
+      }
+    );
+
+    if (!updatedConversation) throw Error;
+
+    return message;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// ============================== GET USER CONVERSATIONS
+export async function getUserConversations(userId: string) {
+  try {
+    const conversations = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.conversationsCollectionId,
+      [Query.search("participants", userId)]
+    );
+
+    if (!conversations) throw Error;
+
+    return conversations.documents;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 // ============================== SAVE USER TO DB
 export async function saveUserToDB(user: {
   accountId: string;
