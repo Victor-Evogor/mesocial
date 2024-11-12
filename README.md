@@ -9,20 +9,34 @@
     <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
     <img src="https://img.shields.io/badge/-React_Query-black?style=for-the-badge&logoColor=white&logo=reactquery&color=FF4154" alt="reactquery" />
     <img src="https://img.shields.io/badge/-Typescript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
+    <img src="https://img.shields.io/badge/-Docker-black?style=for-the-badge&logoColor=white&logo=docker&color=2496ED" alt="docker" />
   </div>
 
-  <h3 align="center">A Social Media Application</h3>
+  <h3 align="center">Modern Social Media Platform</h3>
+
+  <p align="center">
+    An open-source social media application built with React, TypeScript, and Appwrite
+    <br />
+    <a href="#demo">View Demo</a>
+    ·
+    <a href="https://github.com/yourusername/project/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/yourusername/project/issues">Request Feature</a>
+  </p>
 </div>
 
-## 📋 <a name="table">Table of Contents</a>
+## 📋 Table of Contents
 
-1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🕸️ [Snippets](#snippets)
-6. 🔗 [Links](#links)
-7. 🚀 [More](#more)
+1. [About](#about)
+2. [Features](#features)
+3. [Tech Stack](#tech-stack)
+4. [Getting Started](#getting-started)
+   - [Prerequisites](#prerequisites)
+   - [Installation](#installation)
+   - [Docker Setup](#docker-setup)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Contact](#contact)
 
 ## <a name="introduction">🤖 Introduction</a>
 
@@ -114,13 +128,38 @@ npm start
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
-## 🚀 Getting Started <a name="getting-started"></a>
+## 🚀 Getting Started
 
 ### Prerequisites
 
 - Node.js (v14 or higher)
 - npm or yarn
 - Git
+- Docker (optional)
+
+### Docker Setup
+
+You can run this application using Docker:
+
+```bash
+# Build the Docker image
+docker build -t social-media-app .
+
+# Run the container
+docker run -p 5173:5173 social-media-app
+```
+
+The application will be available at `http://localhost:5173`.
+
+For development with Docker Compose, you can use:
+
+```bash
+# Start the development environment
+docker-compose up
+
+# Stop the development environment
+docker-compose down
+```
 
 ### Installation
 
@@ -167,9 +206,29 @@ Contributions are what make the open source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License <a name="license"></a>
+## 📝 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+MIT License
+
+Copyright (c) 2024 Your Name
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ## 📧 Contact <a name="contact"></a>
 
