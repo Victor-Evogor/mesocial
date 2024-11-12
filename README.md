@@ -113,3 +113,64 @@ npm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
+## 🚀 Getting Started <a name="getting-started"></a>
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+- Git
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/project.git
+cd project
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Set up environment variables
+```bash
+cp .env.example .env
+```
+Edit `.env` with your Appwrite credentials:
+```env
+VITE_APPWRITE_URL=
+VITE_APPWRITE_PROJECT_ID=
+VITE_APPWRITE_DATABASE_ID=
+VITE_APPWRITE_STORAGE_ID=
+VITE_APPWRITE_USER_COLLECTION_ID=
+VITE_APPWRITE_POST_COLLECTION_ID=
+VITE_APPWRITE_SAVES_COLLECTION_ID=
+```
+
+4. Start the development server
+```bash
+npm run dev
+```
+
+Visit `http://localhost:5173` to view the application.
+
+## 👥 Contributing <a name="contributing"></a>
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License <a name="license"></a>
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 📧 Contact <a name="contact"></a>
+
+Your Name - [@victorevogor](https://twitter.com/victorevogor) - victorevogor.work@gmail.com
