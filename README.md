@@ -210,7 +210,7 @@ Contributions are what make the open source community such an amazing place to l
 
 MIT License
 
-Copyright (c) 2024 Your Name
+Copyright (c) 2024 Victor Evogor
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -232,4 +232,4 @@ SOFTWARE.
 
 ## 📧 Contact <a name="contact"></a>
 
-Your Name - [@victorevogor](https://twitter.com/victorevogor) - victorevogor.work@gmail.com
+Victor Evogor - [@victorevogor](https://twitter.com/victorevogor) - victorevogor.work@gmail.com
