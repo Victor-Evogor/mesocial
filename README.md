@@ -165,8 +165,8 @@ docker-compose down
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/project.git
-cd project
+git clone https://github.com/Victor-Evogor/mesocial.git
+cd mesocial
 ```
 
 2. Install dependencies
