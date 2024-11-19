@@ -7,7 +7,7 @@ import { IUser, Conversation, Message } from '@/types';
 const Inbox: React.FC = () => {
     const { user } = useUserContext();
     const [searchQuery, setSearchQuery] = useState('');
-    const [searchResults, setSearchResults] = useState<User[]>([]);
+    const [searchResults, setSearchResults] = useState<IUser[]>([]);
     const [conversations, setConversations] = useState<Conversation[]>([]);
     const [selectedConversation, setSelectedConversation] = useState<Conversation | null>(null);
     const [newMessage, setNewMessage] = useState('');
@@ -57,7 +57,7 @@ const Inbox: React.FC = () => {
         }
     };
 
-    const startNewConversation = async (otherUser: User) => {
+    const startNewConversation = async (otherUser: IUser) => {
         if (!user?.$id) return;
 
         const existing = conversations.find(conv => 

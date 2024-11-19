@@ -64,27 +64,11 @@ export type INewUser = {
   password: string;
 };
 
-export type User = {
+export type IUser = {
   id: string;
   name: string;
   username: string;
   email: string;
   imageUrl: string;
   bio: string;
-};
-
-export type Message = {
-  id: string;
-  conversationId: string;
-  senderId: string;
-  content: string;
-  createdAt: Date;
-};
-
-export type Conversation = {
-  id: string;
-  participants: string[];
-  lastMessage?: string;
-  lastMessageTime?: Date;
-  messages: Message[];
 };
