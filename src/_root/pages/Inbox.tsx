@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Models } from 'appwrite';
 import { useUserContext } from '@/context/AuthContext';
 import { getUserConversations, sendMessage, createConversation, getUsers } from '@/lib/appwrite/api';
-import { User, Conversation, Message } from '@/types';
+import { IUser, Conversation, Message } from '@/types';
 
 const Inbox: React.FC = () => {
     const { user } = useUserContext();

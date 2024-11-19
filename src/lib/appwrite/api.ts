@@ -103,7 +103,13 @@ export async function getUserConversations(userId: string) {
 
     if (!conversations) throw Error;
 
-    return conversations.documents;
+    return conversations.documents.map(doc => ({
+      id: doc.$id,
+      participants: doc.participants,
+      lastMessage: doc.lastMessage,
+      lastMessageTime: doc.lastMessageTime,
+      messages: doc.messages || []
+    })) as Conversation[];
   } catch (error) {
     console.log(error);
   }
