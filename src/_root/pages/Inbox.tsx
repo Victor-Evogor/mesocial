@@ -22,7 +22,10 @@ const Inbox: React.FC = () => {
         if (!user?.$id) return;
         const userConversations = await getUserConversations(user.$id);
         if (userConversations) {
-            setConversations(userConversations);
+            setConversations(userConversations.map(conv => ({
+                ...conv,
+                user: undefined // Add the optional user property
+            })));
         }
     };
 
@@ -34,7 +37,14 @@ const Inbox: React.FC = () => {
                 const filtered = users.documents.filter((u: Models.Document) => 
                     u.name.toLowerCase().includes(query.toLowerCase()) &&
                     u.$id !== user?.$id
-                );
+                ).map(u => ({
+                    id: u.$id,
+                    name: u.name,
+                    username: u.username,
+                    email: u.email,
+                    imageUrl: u.imageUrl,
+                    bio: u.bio
+                }));
                 setSearchResults(filtered);
             }
         } else {

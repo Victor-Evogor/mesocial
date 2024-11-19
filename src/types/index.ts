@@ -55,6 +55,7 @@ export type Conversation = {
   lastMessage?: string;
   lastMessageTime?: Date;
   messages: Message[];
+  user?: IUser;
 };
 
 export type INewUser = {
@@ -64,11 +65,3 @@ export type INewUser = {
   password: string;
 };
 
-export type IUser = {
-  id: string;
-  name: string;
-  username: string;
-  email: string;
-  imageUrl: string;
-  bio: string;
-};
