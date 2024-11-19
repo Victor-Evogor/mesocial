@@ -56,6 +56,7 @@ export type Conversation = {
   lastMessageTime?: Date;
   messages: Message[];
   user?: IUser;
+  $id?: string; // For Appwrite document ID
 };
 
 export type INewUser = {

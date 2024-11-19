@@ -23,8 +23,12 @@ const Inbox: React.FC = () => {
         const userConversations = await getUserConversations(user.$id);
         if (userConversations) {
             setConversations(userConversations.map(conv => ({
-                ...conv,
-                user: undefined // Add the optional user property
+                id: conv.$id,
+                participants: conv.participants,
+                lastMessage: conv.lastMessage,
+                lastMessageTime: conv.lastMessageTime,
+                messages: conv.messages || [],
+                user: undefined
             })));
         }
     };
@@ -81,7 +85,14 @@ const Inbox: React.FC = () => {
             const newConv = await createConversation([user.$id, otherUser.id]);
             if (newConv) {
                 loadUserConversations();
-                setSelectedConversation(newConv);
+                setSelectedConversation({
+                    id: newConv.$id,
+                    participants: newConv.participants,
+                    lastMessage: newConv.lastMessage,
+                    lastMessageTime: newConv.lastMessageTime,
+                    messages: newConv.messages || [],
+                    user: undefined
+                });
             }
         }
         setSearchResults([]);
@@ -126,7 +137,7 @@ const Inbox: React.FC = () => {
                             }`}
                         >
                             <div className="font-semibold">
-                                {conversation.participants.filter(id => id !== user?.$id).join(', ')}
+                                {conversation.participants.filter((id: string) => id !== user?.$id).join(', ')}
                             </div>
                             <div className="text-sm text-gray-500">
                                 {conversation.lastMessage || 'No messages yet'}
