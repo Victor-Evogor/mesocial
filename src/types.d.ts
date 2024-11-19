@@ -6,8 +6,12 @@ export interface User {
 
 export interface Conversation {
     id: string;
-    user: User;
+    user?: User;
     lastMessage?: string;
+    participants: string[],
+    lastMessage: string,
+    lastMessageTime: string,
+    messages: Message[]
 }
 
 export type INavLink = {
@@ -44,6 +48,7 @@ export type INavLink = {
   };
   
   export type IUser = {
+    $id?: string,
     id: string;
     name: string;
     username: string;
@@ -75,3 +80,8 @@ export type INavLink = {
     lastMessageTime?: Date;
   };
   
+export interface Message {
+  id: string;
+  content: string;
+  senderId: string;
+}

@@ -109,7 +109,7 @@ export async function getUserConversations(userId: string) {
       lastMessage: doc.lastMessage,
       lastMessageTime: doc.lastMessageTime,
       messages: doc.messages || []
-    })) as Conversation[];
+    })) /* as Conversation[] */;
   } catch (error) {
     console.log(error);
   }

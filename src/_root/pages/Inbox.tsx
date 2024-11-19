@@ -23,7 +23,7 @@ const Inbox: React.FC = () => {
         const userConversations = await getUserConversations(user.$id);
         if (userConversations) {
             setConversations(userConversations.map(conv => ({
-                id: conv.$id,
+                id: conv.id,
                 participants: conv.participants,
                 lastMessage: conv.lastMessage,
                 lastMessageTime: conv.lastMessageTime,
@@ -76,7 +76,7 @@ const Inbox: React.FC = () => {
 
         const existing = conversations.find(conv => 
             conv.participants.includes(otherUser.id) && 
-            conv.participants.includes(user.$id)
+            conv.participants.includes(user.id)
         );
 
         if (existing) {

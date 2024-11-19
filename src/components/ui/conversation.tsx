@@ -20,7 +20,7 @@ const ConversationList: React.FC<ConversationListProps> = ({ conversations }) =>
                 {conversations.length > 0 ? (
                     conversations.map((convo) => (
                         <div key={convo.id} className="p-4 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
-                            {convo.user.name} ({convo.user.username})
+                            {convo.user? convo.user.name: "Anonymous user"} ({convo.user? convo.user.username : "No username"})
                             {convo.lastMessage && <div className="text-sm text-gray-500">{convo.lastMessage}</div>}
                         </div>
                     ))
